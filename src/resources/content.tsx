@@ -1,40 +1,48 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
+// =====================================================================
+// PERSON — Your personal information.
+// =====================================================================
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Hussein",
+  lastName: "Salim",
+  name: "Hussein Salim",
+  role: "Front-End Developer",
+  avatar: "/images/avatar.jpg", // Make sure to replace this file in the /public/images/ folder
+  email: "2025salimh@gmail.com",
+  location: "Africa/Nairobi", // IANA time zone identifier
+  languages: ["English", "Swahili"], 
 };
 
+// =====================================================================
+// NEWSLETTER — Optional: display a newsletter sign-up form.
+// =====================================================================
 const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  display: true, // Set to false to hide
+  title: <>Subscribe to my Newsletter</>,
+  description: <>A monthly dispatch of tech insights and project updates.</>,
 };
 
+// =====================================================================
+// SOCIAL — Your social media links.
+// =====================================================================
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
+  // Import new icons in /src/resources/icons.ts
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/hussein-salim25",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/husseinsalim",
   },
   {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "Website", // Added your portfolio link here
+    icon: "link",   // The 'link' icon should exist, if not, we can add it.
+    link: "https://digitalhus.com",
   },
   {
     name: "Email",
@@ -43,40 +51,42 @@ const social: Social = [
   },
 ];
 
+// =====================================================================
+// HOME — Content for your home page.
+// =====================================================================
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/og/home.jpg", // SEO image
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>From Luxury Hospitality to Digital Elegance.</>,
   featured: {
+    
+
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">DigitalHus</strong>
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Featured project
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    // IMPORTANT: Make sure the 'href' matches a project file you create in /src/app/work/projects/
+    href: "/work/digitalhus-portfolio", 
   },
   subline: (
-    <>
-      I'm Selene, a design engineer at{" "}
-      <Logo
-        dark
-        icon="/trademarks/wordmark-dark.svg"
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+    <>I&apos;m Hussein. I bring the precision, finesse, and high-touch service of luxury hospitality into the world of front-end development,
+      <br /> crafting beautiful, intuitive, and functional digital experiences.
     </>
   ),
 };
 
+// =====================================================================
+// ABOUT — Content for your about page.
+// =====================================================================
 const about: About = {
   path: "/about",
   label: "About",
@@ -90,7 +100,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false, // Set to true if you have a cal.com link
     link: "https://cal.com",
   },
   intro: {
@@ -98,152 +108,123 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        A Front-End Developer with strong foundations in HTML, CSS, JavaScript, React, and Node.js. 
+        My unique background in luxury hospitality leadership informs my approach to tech, emphasizing
+        user-centric design, problem-solving, and high attention to detail. I am passionate about 
+        creating seamless digital experiences that are both beautiful and functional.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Kanche’s Café/Restaurant",
+        timeframe: "2025 – Present",
+        role: "Branch Manager (Hospitality → Digital Ops)",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+          "Oversee branch operations while implementing digital systems for marketing, menu design, and customer engagement.",
+          "Led rollout of a QR code digital menu system, blending customer experience with technology.",
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Qatar Airways",
+        timeframe: "2021 – 2024",
+        role: "Food & Beverage Supervisor",
         achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+          "Implemented a POS system that improved efficiency by 95%, showcasing adaptability with digital solutions.",
+          "Collaborated with multicultural teams to ensure seamless guest experiences in a high-pressure environment.",
+        ],
+        images: [],
+      },
+      {
+        company: "Eka Hotel Nairobi",
+        timeframe: "2018 – 2021",
+        role: "Head Waiter",
+        achievements: [
+          "Promoted to Head Waiter within 12 months due to leadership and customer service excellence.",
+          "Coordinated daily operations, enhancing customer experience workflows—skills now applied in my UX/UI focus.",
         ],
         images: [],
       },
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education & Certifications",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "The Odin Project",
+        description: "Full Stack Web Development (In Progress, 2025)",
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Google (Coursera)",
+        description: "Digital Marketing & E-commerce Certificate (2024)",
+      },
+      {
+        name: "Kenya Utalii College",
+        description: "Certificate in Food & Beverage (2017)",
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
+        title: "Frontend Development",
+        description: "Building responsive, interactive, and accessible single-page applications.",
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "HTML5", icon: "html" },
+          { name: "CSS3", icon: "css" },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "TypeScript", icon: "typescript" },
+          { name: "React", icon: "react" },
+          { name: "Next.js", icon: "nextjs" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
+        title: "Backend & Tooling",
+        description: "Experience with server-side logic, APIs, and modern development tools.",
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "Node.js", icon: "nodejs" },
+          { name: "Firebase", icon: "firebase" },
+          { name: "Git", icon: "git" },
+          { name: "Docker", icon: "docker" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Digital Branding",
+        description: "Designing brand identities and managing digital presence across multiple platforms.",
+        tags: [
+          { name: "Figma", icon: "figma" }, // Assuming you use Figma for design
+          { name: "SEO", icon: "search" },   // Using a generic 'search' icon
         ],
-      },  
+        images: [],
+      },
     ],
   },
 };
 
+// =====================================================================
+// BLOG, WORK, GALLERY — Page configurations.
+// =====================================================================
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about tech and design...",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  description: `A selection of design and development projects by ${person.name}`,
 };
 
 const gallery: Gallery = {
@@ -251,49 +232,12 @@ const gallery: Gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  // IMPORTANT: These are placeholder images. You need to replace them.
   images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
+    { src: "/images/gallery/horizontal-1.jpg", alt: "image", orientation: "horizontal" },
+    { src: "/images/gallery/vertical-4.jpg", alt: "image", orientation: "vertical" },
+    { src: "/images/gallery/horizontal-3.jpg", alt: "image", orientation: "horizontal" },
+    { src: "/images/gallery/vertical-1.jpg", alt: "image", orientation: "vertical" },
   ],
 };
 
